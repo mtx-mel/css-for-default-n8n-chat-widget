@@ -190,6 +190,7 @@
   --chat--body--background: var(--chat--color-light);
   --chat--footer--background: var(--chat--color-light);
   --chat--footer--color: var(--chat--color-dark);
+  --chat-radius-full: 9999px;
 }
 pre code.hljs {
   display: block;
@@ -1024,6 +1025,18 @@ body[data-theme="dark"] .hljs-deletion {
   overflow-y: auto;
   flex-direction: column;
   font-family: var(--chat--font-family);
+}
+.chat-layout .chat-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-layout .chat-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-layout .chat-body::-webkit-scrollbar-thumb {
+  background-color: rgba(16, 185, 129, 0.3);
+  border-radius: var(--chat-radius-full);
 }
 .chat-layout .chat-header {
   display: flex;
@@ -1893,7 +1906,7 @@ ul.user-stack-list li:hover {
 .chat-message {
   display: block;
   position: relative;
-  max-width: fit-content;
+  max-width: 280px;
   font-size: var(--chat--message--font-size);
   padding: var(--chat--message--padding);
   border-radius: var(--chat--message--border-radius);
